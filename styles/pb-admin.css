@@ -1,0 +1,182 @@
+:root {
+    --baseFontFamily: 'Source Sans 3', sans-serif, emoji;
+    --monospaceFontFamily: 'Ubuntu Mono', monospace, emoji;
+    --iconFontFamily: 'remixicon';
+    --txtPrimaryColor:  #1a1a24;
+    --txtHintColor:     #617079;
+    --txtDisabledColor: #a0a6ac;
+    --primaryColor: #1a1a24;
+    --bodyColor: #f8f9fa;
+    --baseColor:     #ffffff;
+    --baseAlt1Color: #e3e8ed;
+    --baseAlt2Color: #d7dde3;
+    --baseAlt3Color: #c9d0da;
+    --baseAlt4Color: #a5b0c0;
+    --infoColor:       #5499e8;
+    --infoAltColor:    #cee2f8;
+    --successColor:    #32ad84;
+    --successAltColor: #c4eedc;
+    --dangerColor:     #e34562;
+    --dangerAltColor:  #f7cad2;
+    --warningColor:    #ff944d;
+    --warningAltColor: #ffd4b8;
+    --overlayColor:   rgba(53, 71, 104, 0.28);
+    --tooltipColor:   rgba(0, 0, 0, 0.85);
+    --shadowColor:    rgba(0, 0, 0, 0.06);
+    --baseFontSize: 14.5px;
+    --xsFontSize:   12px;
+    --smFontSize:   13px;
+    --lgFontSize:   15px;
+    --xlFontSize:   16px;
+    --baseLineHeight: 22px;
+    --smLineHeight:   16px;
+    --lgLineHeight:   24px;
+    --inputHeight: 34px;
+    --btnHeight:   40px;
+    --xsBtnHeight: 22px;
+    --smBtnHeight: 30px;
+    --lgBtnHeight: 54px;
+    --baseSpacing: 30px;
+    --xsSpacing:   15px;
+    --smSpacing:   20px;
+    --lgSpacing:   50px;
+    --xlSpacing:   60px;
+    --wrapperWidth:   850px;
+    --smWrapperWidth: 420px;
+    --lgWrapperWidth: 1200px;
+    --appSidebarWidth: 75px;
+    --pageSidebarWidth: 235px;
+    --baseAnimationSpeed: 150ms;
+    --activeAnimationSpeed: 70ms;
+    --entranceAnimationSpeed: 250ms;
+    --baseRadius: 4px;
+    --lgRadius:   12px;
+    --btnRadius:  4px;
+    accent-color: var(--primaryColor);
+}
+
+body {
+    font-family: var(--baseFontFamily);
+    color: var(--txtPrimaryColor);
+    background: var(--bodyColor);
+}
+
+.app-layout {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+.app-sidebar {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    width: var(--appSidebarWidth);
+    padding: var(--smSpacing) 0px var(--smSpacing);
+    background: var(--baseColor);
+    border-right: 1px solid var(--baseAlt2Color);
+}
+.main-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    row-gap: var(--smSpacing);
+    font-size: var(--xlFontSize);
+    color: var(--txtPrimaryColor);
+    margin-top: 34px;
+    margin-bottom: var(--baseSpacing);
+}
+.menu-item {
+    position: relative;
+    outline: 0;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    user-select: none;
+    color: inherit;
+    min-width: 45px;
+    min-height: 45px;
+    border: 2px solid transparent;
+    border-radius: var(--lgRadius);
+    transition: background var(--baseAnimationSpeed), border var(--baseAnimationSpeed);
+    padding: 0 12px;
+}
+.menu-item:focus-visible,
+.menu-item:hover {
+    background: var(--baseAlt1Color);
+}
+.menu-item.active,
+.menu-item[aria-current="page"] {
+    background: var(--baseColor);
+    border-color: var(--primaryColor);
+}
+.app-body {
+    flex-grow: 1;
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    padding: var(--baseSpacing);
+    background: var(--bodyColor);
+}
+.panel {
+    background: var(--baseColor);
+    border-radius: var(--baseRadius);
+    box-shadow: 0 2px 8px var(--shadowColor);
+    padding: var(--baseSpacing);
+    max-width: 400px;
+    margin: 0 auto;
+}
+.form-field {
+    margin-bottom: var(--smSpacing);
+    display: flex;
+    flex-direction: column;
+}
+.form-field label {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.form-field input {
+    height: var(--inputHeight);
+    border-radius: var(--baseRadius);
+    border: 1px solid var(--baseAlt2Color);
+    padding: 0 10px;
+    font-size: var(--baseFontSize);
+}
+.btn {
+    display: inline-block;
+    padding: 0 18px;
+    height: var(--btnHeight);
+    border-radius: var(--btnRadius);
+    border: none;
+    background: var(--primaryColor);
+    color: #fff;
+    font-weight: 600;
+    font-size: var(--baseFontSize);
+    cursor: pointer;
+    transition: background var(--baseAnimationSpeed);
+}
+.btn-primary {
+    background: var(--primaryColor);
+}
+.btn-primary:hover {
+    background: var(--baseAlt4Color);
+}
+.alert {
+    padding: 10px 16px;
+    border-radius: var(--baseRadius);
+    margin-bottom: var(--smSpacing);
+    font-size: var(--smFontSize);
+}
+.alert-danger {
+    background: var(--dangerAltColor);
+    color: var(--dangerColor);
+} 
